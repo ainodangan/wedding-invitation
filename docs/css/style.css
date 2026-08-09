@@ -1,0 +1,253 @@
+:root {
+  --ink: #3a332c;
+  --ink-soft: #6b6259;
+  --paper: #faf6ef;
+  --paper-alt: #f2ebdd;
+  --accent: #a6763f;
+  --accent-soft: #d9c7a8;
+  --line: #e2d7c3;
+  --todo-bg: #fff4e6;
+  --todo-border: #e0a458;
+  --todo-text: #9a5b12;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Noto Serif JP", serif;
+  line-height: 1.9;
+  -webkit-font-smoothing: antialiased;
+}
+
+.hero {
+  position: relative;
+  min-height: 66vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: center;
+  padding: 2rem 1.5rem 3.5rem;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url("../img/goshintoku-1024x576.jpg") center 60%/cover no-repeat;
+}
+
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(20,15,10,0.18) 0%, rgba(20,15,10,0.58) 60%, var(--paper) 95%);
+}
+
+.hero-eyebrow {
+  position: relative;
+  font-family: "Cormorant Garamond", serif;
+  letter-spacing: 0.35em;
+  font-size: 0.8rem;
+  color: #fff;
+  text-shadow: 0 1px 8px rgba(20,15,10,0.45);
+  margin: 0 0 1.5rem;
+}
+
+.hero-names {
+  position: relative;
+  font-size: clamp(1.8rem, 6vw, 3rem);
+  font-weight: 500;
+  margin: 0 0 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em;
+  flex-wrap: wrap;
+  color: #fff;
+  text-shadow: 0 2px 14px rgba(20,15,10,0.5);
+}
+
+.hero-and {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  color: #ecd9ae;
+  font-size: 0.7em;
+}
+
+.hero-date {
+  position: relative;
+  font-size: 1.1rem;
+  color: #fff;
+  text-shadow: 0 1px 8px rgba(20,15,10,0.4);
+  margin: 0 0 2rem;
+  letter-spacing: 0.05em;
+}
+
+.hero-countdown {
+  position: relative;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.4rem;
+  color: #fff;
+  text-shadow: 0 1px 8px rgba(20,15,10,0.4);
+  letter-spacing: 0.08em;
+}
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: 3.5rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.section:last-of-type { border-bottom: none; }
+
+.section-label {
+  font-family: "Cormorant Garamond", serif;
+  letter-spacing: 0.3em;
+  font-size: 0.85rem;
+  color: var(--accent);
+  text-align: center;
+  margin: 0 0 2rem;
+  text-transform: uppercase;
+}
+
+.message-text {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--ink);
+}
+
+.details-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.details-table th,
+.details-table td {
+  text-align: left;
+  padding: 0.9rem 0.5rem;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+.details-table th {
+  width: 5.5em;
+  color: var(--ink-soft);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.tag {
+  display: inline-block;
+  margin-left: 0.6em;
+  padding: 0.1em 0.6em;
+  font-size: 0.75rem;
+  border: 1px solid var(--accent-soft);
+  border-radius: 999px;
+  color: var(--accent);
+}
+
+.map-wrap {
+  margin-top: 1.5rem;
+  background: var(--paper-alt);
+  border-radius: 8px;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.map-wrap iframe {
+  display: block;
+  width: 100%;
+}
+
+.rsvp {
+  text-align: center;
+}
+
+.rsvp-text {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  margin-bottom: 1.75rem;
+}
+
+.rsvp-deadline {
+  font-weight: 700;
+  font-size: 1.1em;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+  border-bottom: 2px solid var(--accent-soft);
+  padding-bottom: 0.1em;
+}
+
+.rsvp-button {
+  display: inline-block;
+  padding: 0.9rem 2.5rem;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  transition: opacity 0.2s ease;
+}
+
+.rsvp-button:hover { opacity: 0.85; }
+
+.rsvp-button.placeholder {
+  background: var(--accent);
+  color: #fff;
+  outline: none;
+}
+
+.contact p {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+
+.footer {
+  text-align: center;
+  padding: 3rem 1.5rem 4rem;
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  color: var(--ink-soft);
+  letter-spacing: 0.05em;
+}
+
+/* --- Editor aid: highlights unfinished placeholder content.
+   Remove the .placeholder class (and this block) once real content is filled in. --- */
+.placeholder {
+  position: relative;
+  background: var(--todo-bg);
+  outline: 1px dashed var(--todo-border);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.placeholder::after {
+  content: "✎ " attr(data-note);
+  display: block;
+  margin-top: 0.4em;
+  font-family: system-ui, sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0;
+  color: var(--todo-text);
+}
+
+a.placeholder::after {
+  display: none;
+}
+
+@media print {
+  .placeholder::after { display: none; }
+}
